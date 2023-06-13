@@ -1,0 +1,42 @@
+<html>
+    <meta charset="UTF-8">
+    <head></head>
+    <body style='font-size:3em'>
+        MZK Żywiec<br/>
+        Jedn. w gr. miasta lub jedn. gminy U RM<br/>
+        Cena: <b>2,20 PLN</b>
+        <br/>
+        Linia/nr boczny: <b>4</b>
+        <br/>
+        Data zakupu: 12.06.2023r. 15:30:29<br/>
+        Kod: 17606<br/>
+        Numer bieżący: 268363513<br/>
+    </body>
+    <script>
+        // nr_linii.data_zakupu.kod.nr_biezacy
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        var parts = id.split('.');
+
+        console.log(parts)
+
+        let nr_linii = atob(parts[0]);
+        let data_zakupu = atob(parts[1]);
+        let kod = atob(parts[2]);
+        let nr_biezacy = atob(parts[3]);
+
+        console.log([nr_linii, data_zakupu, kod, nr_biezacy])
+
+        document.body.innerHTML = `        
+        MZK Żywiec<br/>
+        Jedn. w gr. miasta lub jedn. gminy U RM<br/>
+        Cena: <b>2,20 PLN</b>
+        <br/>
+        Linia/nr boczny: <b>${nr_linii}</b>
+        <br/>
+        Data zakupu: ${data_zakupu}<br/>
+        Kod: ${kod}<br/>
+        Numer bieżący: ${nr_biezacy}<br/>`
+    </script>
+</html>
